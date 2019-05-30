@@ -1,0 +1,58 @@
+/* Estilo a parte del contenedor de Bootstrap */
+
+.contenedor {
+    background-color: #FAFAFA;
+    border: 5px solid #283655;
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+
+
+/* Estilo para el contenedor de registro */
+
+.contenedorReg {
+    width: 50%;
+    margin: 2% 25% 2% 25%;
+}
+
+
+/* Titulo */
+
+h1 {
+    text-align: center;
+}
+
+
+/*Logo Buap*/
+
+img {
+    margin-left: 10%;
+}
+
+
+/*Botones primarios (Azules)*/
+
+.botonPrimario {
+    border: 2px solid #051b56;
+    color: #051b56;
+}
+
+.botonPrimario:hover {
+    background-color: #051b56;
+    color: #FAFAFA;
+    font-size: 20px;
+}
+
+
+/*Botones Secundarios (Azul Grisaceo)*/
+
+.botonSecundario {
+    border: 2px solid #445684;
+    color: #445684;
+}
+
+.botonSecundario:hover {
+    background-color: #445684;
+    color: #FAFAFA;
+    font-size: 20px;
+}

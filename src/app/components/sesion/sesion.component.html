@@ -1,0 +1,47 @@
+<h1>
+    Bienvenido al Tablero de Proyectos Academicos
+</h1>
+<br>
+<div class="contenedor container">
+    <div class="contenedorReg animated fadeInUp slow" *ngIf="mostrar == 0">
+        <h4>Ingrese los siguientes datos:</h4>
+        <form>
+            <div class="form-group">
+                <label for="indicacionesNombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Escribe tu nombre completo con la primera letra en mayuscula">
+            </div>
+            <div class="form-group">
+                <label for="indicacionesNombre">Matricula:</label>
+                <input type="text" name="matricula" id="matricula" class="form-control" placeholder="Ingresa tu matricula">
+            </div>
+            <div class="form-group">
+                <label for="indicacionesEmail">Correo:</label>
+                <input type="email" name="correo" id="correo" class="form-control" placeholder="Ingresa tu correo">
+            </div>
+            <input type="button" (click)="mostrar = !mostrar" value="Volver a Inicio de Sesión" class="btn btn-outline-secondary btn-block botonSecundario">
+        </form>
+    </div>
+    <div class="row animated fadeInDown slow" *ngIf="mostrar">
+        <div class="col">
+            <img src="../../../assets/img/logoBuap2.png" alt="logoBuap" class="img-fluid">
+        </div>
+        <div class="col">
+            <h3>
+                Por favor inicie sesión o de clic al botón registrar
+            </h3>
+            <form>
+                <div class="form-group">
+                    <label for="cajaMatricula">Matricula</label>
+                    <input type="text" name="matricula" id="matricula" class="form-control" placeholder="Ingrese su matricula">
+                </div>
+                <div class="form-group">
+                    <label for="cajaPwd">Contraseña</label>
+                    <input type="password" name="contra" id="contra" class="form-control" placeholder="Coloque su contraseña">
+                </div>
+                <input type="button" value="Ingresar" class="btn btn-outline-primary btn-block botonPrimario">
+                <br>
+                <input type="button" (click)="mostrar = !mostrar;" value="Registrar" class="btn btn-outline-secondary btn-block botonSecundario">
+            </form>
+        </div>
+    </div>
+</div>
