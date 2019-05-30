@@ -19,6 +19,7 @@
 /* Titulo */
 
 h1 {
+    margin-top: 15px;
     color: #FAFAFA;
     text-align: center;
     font-weight: bold;
@@ -35,26 +36,12 @@ img {
 /*Botones primarios (Azules)*/
 
 .botonPrimario {
-    border: 2px solid #051b56;
-    color: #051b56;
+    border: 2px solid #123C5D;
+    color: #123C5D;
 }
 
 .botonPrimario:hover {
-    background-color: #051b56;
-    color: #FAFAFA;
-    font-size: 20px;
-}
-
-
-/*Botones Secundarios (Azul Grisaceo)*/
-
-.botonSecundario {
-    border: 2px solid #445684;
-    color: #445684;
-}
-
-.botonSecundario:hover {
-    background-color: #445684;
+    background-color: #123C5D;
     color: #FAFAFA;
     font-size: 20px;
 }

@@ -18,7 +18,7 @@
                 <label for="indicacionesEmail">Correo:</label>
                 <input type="email" name="correo" id="correo" class="form-control" placeholder="Ingresa tu correo">
             </div>
-            <input type="button" (click)="mostrar = !mostrar" value="Volver a Inicio de Sesión" class="btn btn-outline-secondary btn-block botonSecundario">
+            <input type="button" (click)="mostrar = !mostrar" value="Volver a Inicio de Sesión" class="btn btn-outline-secondary btn-block botonPrimario">
         </form>
     </div>
     <div class="row animated fadeInDown slow" *ngIf="mostrar">
@@ -40,7 +40,7 @@
                 </div>
                 <input type="button" value="Ingresar" class="btn btn-outline-primary btn-block botonPrimario">
                 <br>
-                <input type="button" (click)="mostrar = !mostrar;" value="Registrar" class="btn btn-outline-secondary btn-block botonSecundario">
+                <input type="button" (click)="mostrar = !mostrar;" value="Registrar" class="btn btn-outline-secondary btn-block botonPrimario">
             </form>
         </div>
     </div>
