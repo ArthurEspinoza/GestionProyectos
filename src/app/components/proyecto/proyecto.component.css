@@ -1,0 +1,82 @@
+/* Estilo a parte del contenedor de Bootstrap */
+
+.contenedor {
+    background-color: #FAFAFA;
+    border: 5px solid #283655;
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+
+
+/*Logo Buap*/
+
+img {
+    margin: 10px 39% 10px 39%;
+}
+
+
+/*Estilo de la tabla*/
+
+.table thead tr td {
+    font-weight: bold;
+    text-align: justify;
+}
+
+
+/*Estilo para los nombres de los proyectos*/
+
+.table tbody tr td a {
+    cursor: pointer;
+    text-align: justify;
+}
+
+.table tbody tr td a:hover {
+    cursor: pointer;
+    color: #347aaa;
+}
+
+
+/*Estilo para la barra de progreso de fondo*/
+
+.barraFondo {
+    height: 25px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+
+/*Estilo para el color de la barra de progreso*/
+
+.barraColor {
+    height: 25px;
+    border-radius: 5px;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+
+/*Estilo para el botón de añadir proyecto*/
+
+.addBtn {
+    background-color: #FAFAFA;
+    color: #123C5D;
+    border: 2px solid #123C5D;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
+}
+
+.addBtn img {
+    margin-left: 0;
+    margin-right: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.addBtn:hover {
+    background-color: #123C5D;
+    color: #FBFBFB;
+    border-radius: 5px;
+    font-size: 20px;
+}

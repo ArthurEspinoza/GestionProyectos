@@ -9,12 +9,14 @@ import { SesionComponent } from './components/sesion/sesion.component';
 
 //Rutas
 import { ROUTES } from './app.routes';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SesionComponent
+    SesionComponent,
+    ProyectoComponent
   ],
   imports: [
     BrowserModule,

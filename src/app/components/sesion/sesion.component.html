@@ -38,7 +38,7 @@
                     <label for="cajaPwd">Contraseña</label>
                     <input type="password" name="contra" id="contra" class="form-control" placeholder="Coloque su contraseña">
                 </div>
-                <input type="button" value="Ingresar" class="btn btn-outline-primary btn-block botonPrimario">
+                <input type="button" [routerLink]="['/proyectos']" value="Ingresar" class="btn btn-outline-primary btn-block botonPrimario">
                 <br>
                 <input type="button" (click)="mostrar = !mostrar;" value="Registrar" class="btn btn-outline-secondary btn-block botonPrimario">
             </form>
