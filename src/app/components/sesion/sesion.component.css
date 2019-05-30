@@ -19,7 +19,9 @@
 /* Titulo */
 
 h1 {
+    color: #FAFAFA;
     text-align: center;
+    font-weight: bold;
 }
 
 
