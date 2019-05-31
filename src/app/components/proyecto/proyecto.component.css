@@ -82,6 +82,14 @@ img {
 }
 
 
+/*Estilo para el contenedor de añadir proyecto*/
+
+.contenedorAdd h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
 /*Estilo para el botón de salir*/
 
 .exitBtn {
@@ -105,4 +113,16 @@ img {
     border-radius: 5px;
     background-color: #AA4F34;
     color: #FBFBFB;
+}
+
+
+/*Estilo para la parte de miembros de añadir proyecto*/
+
+.miembros {
+    width: 72%;
+    margin: 10px 0 0 20px;
+}
+
+.miembros img {
+    margin: 0;
 }

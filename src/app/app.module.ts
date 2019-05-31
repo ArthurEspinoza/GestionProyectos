@@ -10,13 +10,15 @@ import { SesionComponent } from './components/sesion/sesion.component';
 //Rutas
 import { ROUTES } from './app.routes';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { VerProyectoComponent } from './components/ver-proyecto/ver-proyecto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SesionComponent,
-    ProyectoComponent
+    ProyectoComponent,
+    VerProyectoComponent
   ],
   imports: [
     BrowserModule,

@@ -42,6 +42,9 @@ export class ProyectoService {
   getProyectos(){
     return this.proyectos;
   }
+  getProyecto(index){
+    return this.proyectos[index];
+  }
 }
 
 

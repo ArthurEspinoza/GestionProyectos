@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProyectoService, Proyecto } from '../../services/proyecto.service';
 import { Router } from "@angular/router";
+import { element } from 'protractor';
 @Component({
   selector: 'app-proyecto',
   templateUrl: './proyecto.component.html',
@@ -8,6 +9,8 @@ import { Router } from "@angular/router";
 })
 export class ProyectoComponent implements OnInit {
   listaProyectos: Proyecto[] = [];
+  mostrar: number = 1;
+  mostrarM: number = 0;
   rutaAdd: string = "../../../assets/img/add.svg";
   rutaExit: string = "../../../assets/img/salir.svg";
   constructor( private proyectoService: ProyectoService,

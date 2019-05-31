@@ -4,28 +4,70 @@
 <br>
 <div class="container contenedor">
     <img src="../../../assets/img/logoBuap.png" alt="logoBuap" class="img-fluid">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <td>Nombre</td>
-                <td>Materia</td>
-                <td>Progreso</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="animated fadeInLeft fast" *ngFor="let item of listaProyectos; let i = index;">
-                <td><a (click)="verProyecto(i)">{{item.nombre}}</a></td>
-                <td>{{item.materia}}</td>
-                <td>
-                    <div class="barraFondo">
-                        <div class="barraColor" [ngStyle]="{'width.%':item.progreso, 'background-color': getColor(i)}">
-                            {{item.progreso}}%
+    <div *ngIf="mostrar">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Materia</td>
+                    <td>Progreso</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="animated fadeInLeft fast" *ngFor="let item of listaProyectos; let i = index;">
+                    <td><a [routerLink]="['/proyecto', i]">{{item.nombre}}</a></td>
+                    <td>{{item.materia}}</td>
+                    <td>
+                        <div class="barraFondo">
+                            <div class="barraColor" [ngStyle]="{'width.%':item.progreso, 'background-color': getColor(i)}">
+                                {{item.progreso}}%
+                            </div>
                         </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="addBtn" (click)="mostrar = !mostrar" (mouseover)="rutaAdd = '../../../assets/img/addBlanco.png'" (mouseleave)="rutaAdd = '../../../assets/img/add.svg'"><img [src]="rutaAdd">Añadir Proyecto</button>
+        <button class="exitBtn" (click)="regresarASesion()" (mouseover)="rutaExit = '../../../assets/img/salirBlanco.png'" (mouseleave)="rutaExit = '../../../assets/img/salir.svg'"><img [src]="rutaExit">Salir</button>
+    </div>
+    <div class="container contenedorAdd" *ngIf="mostrar == 0">
+        <h4>Ingrese los siguientes datos:</h4>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Proyecto</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Escribe el nombre de tu proyecto">
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <button class="addBtn" (mouseover)="rutaAdd = '../../../assets/img/addBlanco.png'" (mouseleave)="rutaAdd = '../../../assets/img/add.svg'"><img [src]="rutaAdd">Añadir Proyecto</button>
-    <button class="exitBtn" (click)="regresarASesion()" (mouseover)="rutaExit = '../../../assets/img/salirBlanco.png'" (mouseleave)="rutaExit = '../../../assets/img/salir.svg'"><img [src]="rutaExit">Salir</button>
+                    <div class="form-group">
+                        <label for="materia">Materia del Proyecto</label>
+                        <input type="text" name="materia" id="materia" class="form-control" placeholder="Escribe la materia del proyecto">
+                    </div>
+                    <div class="form-group">
+                        <label for="docente">Docente</label>
+                        <input type="text" name="docente" id="docente" class="form-control" placeholder="Docente de la materia">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea name="descrip" id="descrip" cols="50" rows="10" class="form-control">Describa su proyecto</textarea>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <label for="tipo">Tipo:</label><br>
+                        <input type="radio" class="form-check-input" name="ind" id="ind" value="individual">
+                        <label for="individual" class="form-check-label">Individual</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="equip" id="equip" value="equipo">
+                        <label for="equipo" class="form-check-label">Equipo</label>
+                    </div>
+                    <div class="form-group miembros">
+                        <input type="text" name="miembro" id="miembro" class="form-control" placeholder="Escriba el nombre del miembro correspondiente">
+                        <button class="addBtn"><img src="../../../assets/img/add.svg" alt="addMimebro">Añadir Miembro</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
