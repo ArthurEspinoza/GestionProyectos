@@ -21,17 +21,3 @@
 img {
     margin-left: 10%;
 }
-
-
-/*Botones primarios (Azules)*/
-
-.botonPrimario {
-    border: 2px solid #123C5D;
-    color: #123C5D;
-}
-
-.botonPrimario:hover {
-    background-color: #123C5D;
-    color: #FAFAFA;
-    font-size: 20px;
-}

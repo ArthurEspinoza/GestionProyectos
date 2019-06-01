@@ -19,7 +19,27 @@ export class ProyectoService {
         miembro2: {
           nombre: 'Lucia Hernandez Solis'
         }
-      }
+      },
+      toDo: [
+        {
+          nombreTarea: 'Prueba 1',
+          numeroTarea: '5',
+          actividades: {
+            actividad1: 'Crear diseño en papel',
+            actividad2: 'Decidir herramienta web',
+            actividad3: 'Diseñar la interfaz en web'
+          }
+        },
+        {
+          nombreTarea: 'Prueba 2',
+          numeroTarea: '5',
+          actividades: {
+            actividad1: 'Crear diseño en papel',
+            actividad2: 'Decidir herramienta web',
+            actividad3: 'Diseñar la interfaz en web'
+          }
+        }
+      ]
     },
     {
       nombre: 'AppSalud',
@@ -56,4 +76,7 @@ export interface Proyecto {
   tipo: string;
   progreso: number;
   miembro?: {};
+  toDo?: {};
+  doing?: {};
+  done?: {};
 };

@@ -9,11 +9,13 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class VerProyectoComponent implements OnInit {
   proyecto: any = {};
+  listaToDo: any;
   constructor(private proyectoService: ProyectoService,
               private _activatedRoute: ActivatedRoute) { 
 
      this._activatedRoute.params.subscribe( params =>{
           this.proyecto = this.proyectoService.getProyecto(params['id']);
+          this.listaToDo = this.proyecto.toDo;
      });
     }
 

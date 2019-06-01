@@ -33,7 +33,7 @@
     <div class="container contenedorAdd" *ngIf="mostrar == 0">
         <h4>Ingrese los siguientes datos:</h4>
         <form>
-            <div class="row">
+            <div class="row animated fadeInUp fast">
                 <div class="col">
                     <div class="form-group">
                         <label for="nombre">Nombre del Proyecto</label>
@@ -55,17 +55,18 @@
                 <div class="col">
                     <div class="form-check">
                         <label for="tipo">Tipo:</label><br>
-                        <input type="radio" class="form-check-input" name="ind" id="ind" value="individual">
+                        <input type="radio" class="form-check-input" (click)="mostrarM = 0" name="ind" id="ind" value="individual">
                         <label for="individual" class="form-check-label">Individual</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" name="equip" id="equip" value="equipo">
+                        <input type="radio" class="form-check-input" (click)="mostrarM = !mostrarM" name="equip" id="equip" value="equipo">
                         <label for="equipo" class="form-check-label">Equipo</label>
                     </div>
-                    <div class="form-group miembros">
+                    <div class="form-group miembros" *ngIf="mostrarM">
                         <input type="text" name="miembro" id="miembro" class="form-control" placeholder="Escriba el nombre del miembro correspondiente">
                         <button class="addBtn"><img src="../../../assets/img/add.svg" alt="addMimebro">Añadir Miembro</button>
                     </div>
+                    <button class="botonPrimario btn btn-block" (click)="mostrar = !mostrar">Añadir Tarea</button>
                 </div>
             </div>
         </form>

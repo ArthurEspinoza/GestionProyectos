@@ -1,13 +1,3 @@
-/* Estilo a parte del contenedor de Bootstrap */
-
-.contenedor {
-    background-color: #FAFAFA;
-    border: 5px solid #283655;
-    border-radius: 15px;
-    padding: 10px 10px 10px 10px;
-}
-
-
 /*Logo Buap*/
 
 img {
@@ -125,4 +115,11 @@ img {
 
 .miembros img {
     margin: 0;
+}
+
+
+/*Ajustes a la clase botonPrimario*/
+
+.botonPrimario {
+    margin-top: 10px;
 }

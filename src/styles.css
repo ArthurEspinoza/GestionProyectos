@@ -10,6 +10,16 @@ body {
 }
 
 
+/* Estilo a parte del contenedor de Bootstrap */
+
+.contenedor {
+    background-color: #FAFAFA;
+    border: 5px solid #283655;
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+
+
 /* Titulos */
 
 h1 {
@@ -17,4 +27,18 @@ h1 {
     color: #FAFAFA;
     text-align: center;
     font-weight: bold;
+}
+
+
+/*Botones primarios (Azules)*/
+
+.botonPrimario {
+    border: 2px solid #123C5D;
+    color: #123C5D;
+}
+
+.botonPrimario:hover {
+    background-color: #123C5D;
+    color: #FAFAFA;
+    font-size: 20px;
 }

@@ -1,1 +1,19 @@
-<h1>Ver proyecto {{proyecto.nombre}}</h1>
+<h1>Proyecto: {{proyecto.nombre | uppercase}}</h1>
+<br>
+<div class="container contenedor">
+    <img src="../../../assets/img/logoBuap.png" class="img-fluid">
+    <div class="row">
+        <div class="col" *ngFor="let tarea of listaToDo; let i = index;">
+            <!--To-do-->
+            {{tarea[i].nombre}}
+        </div>
+        <div class="col">
+            <!--Doing-->
+
+        </div>
+        <div class="col">
+            <!--Done-->
+
+        </div>
+    </div>
+</div>
