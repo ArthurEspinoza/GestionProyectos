@@ -3,9 +3,21 @@
 <div class="container contenedor">
     <img src="../../../assets/img/logoBuap.png" class="img-fluid">
     <div class="row">
-        <div class="col" *ngFor="let tarea of listaToDo; let i = index;">
+        <div class="col">
             <!--To-do-->
-            {{tarea[i].nombre}}
+            <h3>To-do</h3>
+            <div class="card-body" *ngFor="let tarea of listaToDo; let i = index;">
+                <h5 class="card-title">{{tarea.nombreTarea}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{tarea.numeroTarea}}</h6>
+                <a href="#" class="card-link">Ver mas...</a>
+                <div id="panel1">
+                    <ul>
+                        <li *ngFor="let act of listaToDo[i].actividades; let i = index">
+                            {{act}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col">
             <!--Doing-->

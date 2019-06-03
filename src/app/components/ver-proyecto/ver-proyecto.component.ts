@@ -16,6 +16,7 @@ export class VerProyectoComponent implements OnInit {
      this._activatedRoute.params.subscribe( params =>{
           this.proyecto = this.proyectoService.getProyecto(params['id']);
           this.listaToDo = this.proyecto.toDo;
+          console.log(this.listaToDo[0].actividades[0]);
      });
     }
 
