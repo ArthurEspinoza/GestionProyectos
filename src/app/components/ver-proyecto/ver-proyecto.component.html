@@ -7,25 +7,60 @@
             <!--To-do-->
             <h3>To-do</h3>
             <div class="card-body" *ngFor="let tarea of listaToDo; let i = index;">
-                <h5 class="card-title">{{tarea.nombreTarea}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{tarea.numeroTarea}}</h6>
-                <a href="#" class="card-link">Ver mas...</a>
-                <div id="panel1">
-                    <ul>
+                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
+                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas">
+                    <ul *ngIf="checarTodo(i)">
                         <li *ngFor="let act of listaToDo[i].actividades; let i = index">
                             {{act}}
                         </li>
                     </ul>
+                    <div *ngIf="checarTodo(i)==false">
+                        <h4>No existen tareas especificas</h4>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col doing">
             <!--Doing-->
-
+            <h3>Doing</h3>
+            <div class="card-body" *ngFor="let tarea of listaDoing; let i = index;">
+                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
+                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas">
+                    <ul *ngIf="checarDoing(i)">
+                        <li *ngFor="let act of listaDoing[i].actividades; let i = index">
+                            {{act}}
+                        </li>
+                    </ul>
+                    <div *ngIf="checarDoing(i)==false">
+                        <h4>No existen tareas especificas</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col">
+        <div class="col done">
             <!--Done-->
-
+            <h3>Done</h3>
+            <div class="card-body" *ngFor="let tarea of listaDone; let i = index;">
+                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
+                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas">
+                    <ul *ngIf="checarDone(i)">
+                        <li *ngFor="let act of listaDone[i].actividades; let i = index">
+                            {{act}}
+                        </li>
+                    </ul>
+                    <div *ngIf="checarDone(i)==false">
+                        <h4>No existen tareas especificas</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <button class="addBtn" (click)="mostrar = !mostrar" (mouseover)="rutaAdd = '../../../assets/img/addBlanco.png'" (mouseleave)="rutaAdd = '../../../assets/img/add.svg'"><img [src]="rutaAdd">Añadir Proyecto</button>
+    <button class="exitBtn" (click)="regresarAProyectos()" (mouseover)="rutaExit = '../../../assets/img/salirBlanco.png'" (mouseleave)="rutaExit = '../../../assets/img/salir.svg'"><img [src]="rutaExit">Salir</button>
 </div>

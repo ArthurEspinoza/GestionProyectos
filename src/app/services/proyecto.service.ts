@@ -12,14 +12,10 @@ export class ProyectoService {
       descripcion: 'Un proyecto el cual deben usar la herramienta R para gener un estudio de un banco de datos de Kaggle',
       tipo: 'Equipo',
       progreso: 100,
-      miembro: {
-        miembro1: {
-          nombre: 'Arturo Espinoza Quintero'
-        },
-        miembro2: {
-          nombre: 'Lucia Hernandez Solis'
-        }
-      },
+      miembro: [
+        'Arturo Espinoza Quintero',
+        'Lucia Hernandez Solis'
+      ],
       toDo: [
         {
           nombreTarea: 'Prueba 1',
@@ -32,7 +28,29 @@ export class ProyectoService {
         },
         {
           nombreTarea: 'Prueba 2',
-          numeroTarea: '5',
+          numeroTarea: '6',
+          actividades: [
+            'Crear diseño en papel',
+            'Decidir herramienta web',
+            'Diseñar la interfaz en web'
+          ]
+        }
+      ],
+      doing: [
+        {
+          nombreTarea: 'Prueba 3',
+          numeroTarea: '7',
+          actividades: [
+            'Crear diseño en papel',
+            'Decidir herramienta web',
+            'Diseñar la interfaz en web'
+          ]
+        }
+      ],
+      done: [
+        {
+          nombreTarea: 'Prueba 1',
+          numeroTarea: '2',
           actividades: [
             'Crear diseño en papel',
             'Decidir herramienta web',
@@ -47,7 +65,17 @@ export class ProyectoService {
       docente: 'Hilda Mendoza Cardenas',
       descripcion: 'Es una aplicación web que permite checar el historial clinico de un paciente',
       tipo: 'Individual',
-      progreso: 65
+      progreso: 65,
+      toDo:[
+        {
+          nombreTarea: 'Prueba 1',
+          numeroTarea: '5',
+        },
+        {
+          nombreTarea: 'Prueba 2',
+          numeroTarea: '6',
+        }
+      ]
     },
     {
       nombre: 'Animación 3D',
