@@ -12,7 +12,8 @@ export class VerProyectoComponent implements OnInit {
   listaToDo: any;
   listaDoing: any;
   listaDone: any;
-  verMas = false;
+  verMas = -1;
+  mostrar = 1;
   rutaAdd: string = "../../../assets/img/add.svg";
   rutaExit: string = "../../../assets/img/salir.svg";
   constructor(private proyectoService: ProyectoService,
@@ -24,7 +25,7 @@ export class VerProyectoComponent implements OnInit {
           this.listaToDo = this.proyecto.toDo;
           this.listaDoing = this.proyecto.doing;
           this.listaDone = this.proyecto.done;
-          console.log(this.listaToDo[0].actividades);
+          //console.log(this.listaToDo[0].actividades);
      });
     }
 
@@ -52,6 +53,14 @@ export class VerProyectoComponent implements OnInit {
     }
   }
   regresarAProyectos(){
-    this._route.navigate(['/proyectos'])
+    this._route.navigate(['/proyectos']);
+  }
+  ctrlT(evento){
+    console.log(evento);
+    if (this.verMas === -1) {
+      this.verMas = evento;
+    } else {
+      this.verMas = -1;
+    }
   }
 }

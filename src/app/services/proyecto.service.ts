@@ -75,7 +75,9 @@ export class ProyectoService {
           nombreTarea: 'Prueba 2',
           numeroTarea: '6',
         }
-      ]
+      ],
+      doing:[],
+      done:[]
     },
     {
       nombre: 'Animación 3D',
@@ -83,7 +85,10 @@ export class ProyectoService {
       docente: 'Rene Suizo Mercado',
       descripcion: 'Es un programa grafico que ejecuta una animación en 3D',
       tipo: 'Individual',
-      progreso: 15
+      progreso: 15,
+      toDo:[],
+      doing:[],
+      done:[]
     }
   ];
   constructor() { }
@@ -103,8 +108,8 @@ export interface Proyecto {
   descripcion: string;
   tipo: string;
   progreso: number;
-  miembro?: {};
-  toDo?: {};
-  doing?: {};
-  done?: {};
+  miembro?;
+  toDo?;
+  doing?;
+  done?;
 };

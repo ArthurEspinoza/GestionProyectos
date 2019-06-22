@@ -1,62 +1,69 @@
 <h1>Proyecto: {{proyecto.nombre | uppercase}}</h1>
 <br>
-<div class="container contenedor">
+<div class="container contenedor" *ngIf="mostrar; else addTarea">
     <img src="../../../assets/img/logoBuap.png" class="img-fluid">
     <div class="row">
         <div class="col">
             <!--To-do-->
             <h3>To-do</h3>
             <div class="card-body" *ngFor="let tarea of listaToDo; let i = index;">
-                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+                <h5 class="card-title">Titulo: {{tarea.nombreTarea}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
-                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
-                <div id="panel1" *ngIf="verMas">
-                    <ul *ngIf="checarTodo(i)">
-                        <li *ngFor="let act of listaToDo[i].actividades; let i = index">
+                <a id="btnVm" class="btn btn-outline-primary" (click)="ctrlT(tarea.numeroTarea)">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas == tarea.numeroTarea">
+                    <ul *ngIf="checarTodo(i);else falsoTodo">
+                        <li *ngFor="let act of listaToDo[i].actividades; let j = index">
                             {{act}}
                         </li>
                     </ul>
-                    <div *ngIf="checarTodo(i)==false">
-                        <h4>No existen tareas especificas</h4>
-                    </div>
+                    <ng-template #falsoTodo>
+                        <div>
+                            <h4>No existen tareas especificas</h4>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
         <div class="col doing">
             <!--Doing-->
             <h3>Doing</h3>
-            <div class="card-body" *ngFor="let tarea of listaDoing; let i = index;">
-                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+            <div class="card-body" *ngFor="let tarea of listaDoing; let a = index;">
+                <h5 class="card-title">Titulo: {{tarea.nombreTarea}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
-                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
-                <div id="panel1" *ngIf="verMas">
-                    <ul *ngIf="checarDoing(i)">
-                        <li *ngFor="let act of listaDoing[i].actividades; let i = index">
+                <a id="btnVm" class="btn btn-outline-primary" (click)="ctrlT(tarea.numeroTarea)">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas == tarea.numeroTarea">
+                    <ul *ngIf="checarDoing(a);else falsoDoing">
+                        <li *ngFor="let act of listaDoing[a].actividades; let b = index">
                             {{act}}
                         </li>
                     </ul>
-                    <div *ngIf="checarDoing(i)==false">
-                        <h4>No existen tareas especificas</h4>
-                    </div>
+                    <ng-template #falsoDoing>
+                        <div>
+                            <h4>No existen tareas especificas</h4>
+                        </div>
+                    </ng-template>
+
                 </div>
             </div>
         </div>
         <div class="col done">
             <!--Done-->
             <h3>Done</h3>
-            <div class="card-body" *ngFor="let tarea of listaDone; let i = index;">
-                <h5 class="card-title">NombreTarea: {{tarea.nombreTarea}}</h5>
+            <div class="card-body" *ngFor="let tarea of listaDone; let c = index;">
+                <h5 class="card-title">Titulo: {{tarea.nombreTarea}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">#Tarea: {{tarea.numeroTarea}}</h6>
-                <a id="btnVm" class="btn btn-outline-primary" (click)="verMas = !verMas">Ver mas...</a>
-                <div id="panel1" *ngIf="verMas">
-                    <ul *ngIf="checarDone(i)">
-                        <li *ngFor="let act of listaDone[i].actividades; let i = index">
+                <a id="btnVm" class="btn btn-outline-primary" (click)="ctrlT(tarea.numeroTarea)">Ver mas...</a>
+                <div id="panel1" *ngIf="verMas == tarea.numeroTarea">
+                    <ul *ngIf="checarDoing(c); else falsoDone">
+                        <li *ngFor="let act of listaDone[c].actividades; let d = index">
                             {{act}}
                         </li>
                     </ul>
-                    <div *ngIf="checarDone(i)==false">
-                        <h4>No existen tareas especificas</h4>
-                    </div>
+                    <ng-template #falsoDone>
+                        <div>
+                            <h4>No existen tareas especificas</h4>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -64,3 +71,23 @@
     <button class="addBtn" (click)="mostrar = !mostrar" (mouseover)="rutaAdd = '../../../assets/img/addBlanco.png'" (mouseleave)="rutaAdd = '../../../assets/img/add.svg'"><img [src]="rutaAdd">Añadir Tarea</button>
     <button class="exitBtn" (click)="regresarAProyectos()" (mouseover)="rutaExit = '../../../assets/img/salirBlanco.png'" (mouseleave)="rutaExit = '../../../assets/img/salir.svg'"><img [src]="rutaExit">Regresar</button>
 </div>
+<ng-template #addTarea>
+    <div class=" container contenedorAdd animated fadeInUp fast">
+        <h4>Ingrese los siguientes datos:</h4>
+        <form>
+            <div class="form-group">
+                <label for="Titulo">Titulo de la tarea</label>
+                <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Escribe el titulo de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="numeroT">Numero de la tarea</label>
+                <input type="text" name="numeroT" id="numeroT" class="form-control" placeholder="Escribe el numero de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="actividad">Añadir Actividades</label>
+                <input type="text" name="act" id="act" class="form-control" placeholder="Escriba las actividades a realizar de la tarea">
+            </div>
+            <button class="botonPrimario btn" (click)="mostrar = !mostrar">Añadir Tarea</button>
+        </form>
+    </div>
+</ng-template>

@@ -78,3 +78,28 @@
         background-color: #AA4F34;
         color: #FBFBFB;
     }
+    /*Estilo para la parte de agregar tarea*/
+    
+    .contenedorAdd {
+        background-color: #FAFAFA;
+        border: 5px solid #283655;
+        border-radius: 15px;
+        padding: 10px 10px 10px 10px;
+    }
+    
+    .contenedorAdd h4 {
+        text-align: center;
+    }
+    
+    .contenedorAdd form {
+        width: 65%;
+        margin: 0 0 0 19%;
+    }
+    
+    .contenedorAdd form label {
+        font-weight: bold;
+    }
+    
+    .contenedorAdd form button {
+        margin: 0 0 0 36%;
+    }
